@@ -67,6 +67,9 @@ public class RoadController
             //Легковой автомобиль
             else {
                 price = passengerCarPrice;//var has been changed
+                if (car.hasVehicle) {//add vehicleAdditionalPrice to passenger car
+                    price = price + vehicleAdditionalPrice;
+                }
             }
         }
         else {
