@@ -2,34 +2,46 @@
 
 public class Main {
     public static void main(String[] args) {
-        int x = 45;
-        int y = 5;
-        int z = 0;
+        int dimaAge = 25;
+        int mishaAge = 10;
+        int vasyaAge = 300;
 
-        int min = x;
-        int mid = y;
-        int max = x;
-        if (y < x && x < z) {
-            mid = x; min = y; max = z;
+        int oldest;
+        int middle;
+        int youngest;
+
+        if (dimaAge > mishaAge) {
+            if (dimaAge > vasyaAge) {
+                oldest = dimaAge;
+                if (vasyaAge > mishaAge) {
+                    middle = vasyaAge;
+                    youngest = mishaAge;
+                } else {
+                    youngest = vasyaAge;
+                    middle = mishaAge;
+                }
+            } else {
+                oldest = vasyaAge;
+                youngest = mishaAge;
+                middle = dimaAge;
+            }
+        } else if (mishaAge > vasyaAge) {
+            oldest = mishaAge;
+            if (dimaAge > vasyaAge) {
+                middle = dimaAge;
+                youngest = vasyaAge;
+            } else {
+                youngest = dimaAge;
+                middle = vasyaAge;
+            }
+        } else {
+            oldest = vasyaAge;
+            middle = mishaAge;
+            youngest = dimaAge;
         }
-        if (z < x && x < y) {
-            mid = x; min = z; max = y;
-        }
-        if (x < y && y < z) {
-          mid = y; min = x; max = z;
-        }
-        if (z < y && y < x) {
-            mid = y; min = z; max = x;
-        }
-        if (x < z && z < y) {
-          mid = z; min = x; max = y;
-        }
-        if (y < z && z < x) {
-            mid = z; min = y; max = x;
-        }
-        System.out.println("min number " + min);
-        System.out.println("max number " + max);
-        System.out.println("mid number " + mid);
+        System.out.println("Minimal age " + youngest);
+        System.out.println("Middle age " + middle);
+        System.out.println("Maximum age " + oldest);
 
     }
 }
