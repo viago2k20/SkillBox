@@ -7,7 +7,7 @@ public class RoadController
 {
     private static double passengerCarMaxWeight = 3500.0; // kg
     private static int passengerCarMaxHeight = 2000; // mm
-    private static int controllerMaxHeight = 4000; // mm
+    private static int controllerMaxHeight = 3500; // mm
 
     private static int passengerCarPrice = 100; // RUB
     private static int cargoCarPrice = 250; // RUB
