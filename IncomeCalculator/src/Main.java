@@ -22,15 +22,21 @@ public class Main
        public static void main(String[] args)
     {
         //расчет минимальной суммы дохода для инвестирования
-        int i = minIncome;
-        double t = 0;
-        double m;
-        while (t < 1)
-        {
-            i++;
-            m = i*managerPercent;
-            t = i/(calculateFixedCharges()+m+(i-m-calculateFixedCharges())*mainTaxPercent + minInvestmentsAmount);
-        }
+          double i;
+//        double t = 0;
+//        double m;
+//        while (t < 1)
+//        {
+//            i++;
+//            m = i*managerPercent;
+//            t = i/(calculateFixedCharges()+m+(i-m-calculateFixedCharges())*mainTaxPercent + minInvestmentsAmount);
+//            //(calculateFixedCharges()+m+(i-m-calculateFixedCharges())*mainTaxPercent + minInvestmentsAmount)=i;
+//            //calculateFixedCharges()+ i*managerPercent+i*mainTaxPercent-i*managerPercent*mainTaxPercent-calculateFixedCharges()*mainTaxPercent+minInvestmentsAmount=i
+//            //calculateFixedCharges()-calculateFixedCharges()*mainTaxPercent+minInvestmentsAmount=i-i*managerPercent-i*mainTaxPercent+i*managerPercent*mainTaxPercent
+//            //calculateFixedCharges()-calculateFixedCharges()*mainTaxPercent+minInvestmentsAmount=i*(1-managerPercent-mainTaxPercent+managerPercent*mainTaxPercent)
+//            //i=(calculateFixedCharges()-calculateFixedCharges()*mainTaxPercent+minInvestmentsAmount)/(1-managerPercent-mainTaxPercent+managerPercent*mainTaxPercent)
+//        }
+        i=(calculateFixedCharges()-calculateFixedCharges()*mainTaxPercent+minInvestmentsAmount)/(1-managerPercent-mainTaxPercent+managerPercent*mainTaxPercent);
         System.out.println("Минимальная сумма дохода для инвестирования: " + i);
 
         while(true)
