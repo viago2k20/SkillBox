@@ -25,6 +25,7 @@ public class Loader {
         //про кота Тома
         System.out.println("\n\nВес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
         tom.drink(500.1);
+        //System.out.println("Столько еды съел Том " + tom.massOfFood());
         System.out.println("Вес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
 
         //про кошку Маню
@@ -32,13 +33,14 @@ public class Loader {
         manya.feed(100.1);
         manya.meow();
         System.out.println("Вес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
+        System.out.println(manya.massOfFood());
 
         //про кошку Фиби
         System.out.println("\n\nВес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
         fibi.meow();
         fibi.meow();
+        fibi.goToWC();
         System.out.println("Вес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
-
 
 
     }

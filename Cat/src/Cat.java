@@ -16,6 +16,16 @@ public class Cat
 
     }
 
+    public double massOfFood()
+    {
+        return originWeight - weight;
+    }
+    public void goToWC()
+    {
+        weight = weight - 50;
+        System.out.println("It was in right place! Meow.");
+    }
+
     public void meow()
     {
         weight = weight - 1;
