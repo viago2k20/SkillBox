@@ -42,6 +42,8 @@ public class Loader {
         fibi.goToWC();
         System.out.println("Вес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
 
-
+        //количество кошек
+        System.out.println("\n-========-");
+        System.out.println("Количество живых кошек: " + Cat.getCount());
     }
 }
