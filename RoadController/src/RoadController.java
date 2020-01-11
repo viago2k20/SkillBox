@@ -62,10 +62,10 @@ public class RoadController
                 price = cargoCarPrice;//var has been changed
             }
             //Легковой автомобиль
-            else {
-                price = passengerCarPrice;//var has been changed
-            }
-            if (car.hasVehicle) {//add vehicleAdditionalPrice to passenger car
+            else if (weight <= passengerCarMaxWeight) {
+            price = passengerCarPrice;//var has been changed
+           }
+            if (car.hasVehicle) {//add vehicleAdditionalPrice to car
             price = price + vehicleAdditionalPrice;
         }
         }
