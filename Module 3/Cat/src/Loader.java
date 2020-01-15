@@ -5,7 +5,7 @@ public class Loader {
     //метод в котором создается новая кошка и отображается ее вес
     public static void newCat(Cat nameCat) {
         new Cat();
-        System.out.println("\nСоздали новую кошку! " + " и ее вес = " + nameCat.getWeight());
+        System.out.println("\nПоявилась новая кошка! Ёе вес = " + nameCat.getWeight());
     }
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Loader {
         //про кота Пита
         pit.meow();
         double w = pit.getWeight();
-        System.out.println(w);
+        System.out.println("\nВес кота Пита " + w);
         for (int j = 0; j < w - 1000; j++) {
             pit.meow();
         }
@@ -29,13 +29,15 @@ public class Loader {
         //про кота Филиппа
         System.out.println("\n\nВес кота Филиппа " + filipp.getWeight());
         filipp.meow();
-        filipp.feed(9000.1 - filipp.getWeight());
+        while (filipp.getWeight() <= 9001) {
+            filipp.feed(50.0);
+            System.out.println(filipp.getWeight());
+        }
         System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus());
 
         //про кота Тома
         System.out.println("\n\nВес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
-        tom.drink(500.1);
-        //System.out.println("Столько еды съел Том " + tom.massOfFood());
+        tom.drink(500.0);
         System.out.println("Вес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
 
         //про кошку Маню
