@@ -13,6 +13,12 @@ public class Cat {
         minWeight = 1000.0;
         maxWeight = 9000.0;
         count++;
+    }
+    //масса кошки задается через входной параметр конструктора
+    public Cat(double weight)
+    {
+        this ();
+        this.weight = weight;
 
     }
     //метод выводит значение статической переменной count

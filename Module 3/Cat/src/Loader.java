@@ -1,11 +1,21 @@
+import java.lang.invoke.StringConcatFactory;
 
 public class Loader {
+
+    //метод в котором создается новая кошка и отображается ее вес
+    public static void newCat(Cat nameCat) {
+        new Cat();
+        System.out.println("\nСоздали новую кошку! " + " и ее вес = " + nameCat.getWeight());
+    }
+
     public static void main(String[] args) {
         Cat filipp = new Cat();
         Cat pit = new Cat();
         Cat tom = new Cat();
         Cat manya = new Cat();
         Cat fibi = new Cat();
+
+        Cat tor = new Cat(3000.2);
 
         //про кота Пита
         pit.meow();
@@ -42,8 +52,17 @@ public class Loader {
         fibi.goToWC();
         System.out.println("Вес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
 
+        //про кота Тора
+        System.out.println("\nВес кота Тора " + tor.getWeight());
+
+        newCat(tom);//вызов метода, создающего новую кошку
+
         //количество кошек
         System.out.println("\n-========-");
         System.out.println("Количество живых кошек: " + Cat.getCount());
+
+
+
+
     }
 }
