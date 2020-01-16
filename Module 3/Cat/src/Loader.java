@@ -1,11 +1,10 @@
-import java.lang.invoke.StringConcatFactory;
-
 public class Loader {
 
     //метод в котором создается новая кошка и отображается ее вес
-    public static void newCat(Cat nameCat) {
-        new Cat();
-        System.out.println("\nПоявилась новая кошка! Ёе вес = " + nameCat.getWeight());
+    private static Cat getKitten() {
+        Cat nameCat = new Cat(1100);
+        System.out.println("\nПоявился котенок! Его вес = " + nameCat.getWeight());
+        return nameCat;
     }
 
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class Loader {
         Cat manya = new Cat();
         Cat fibi = new Cat();
 
-        Cat tor = new Cat(3000.2);
+        Cat tor = new Cat(2000);
 
         //про кота Пита
         pit.meow();
@@ -28,12 +27,13 @@ public class Loader {
 
         //про кота Филиппа
         System.out.println("\n\nВес кота Филиппа " + filipp.getWeight());
-        filipp.meow();
+        //filipp.meow();
         while (filipp.getWeight() <= 9001) {
             filipp.feed(50.0);
             System.out.println(filipp.getWeight());
         }
-        System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus());
+        System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
+                + "\nФилипп съел " + filipp.massOfFood());
 
         //про кота Тома
         System.out.println("\n\nВес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
@@ -42,7 +42,7 @@ public class Loader {
 
         //про кошку Маню
         System.out.println("\n\nВес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
-        manya.feed(100.1);
+        manya.feed(100.0);
         manya.meow();
         System.out.println("Вес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
         System.out.println(manya.massOfFood());
@@ -51,19 +51,22 @@ public class Loader {
         System.out.println("\n\nВес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
         fibi.meow();
         fibi.meow();
-        fibi.goToWC();
+        fibi.pee();
         System.out.println("Вес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
 
         //про кота Тора
+        tor.setCatsColor(CatsColor.BLACK);
         System.out.println("\nВес кота Тора " + tor.getWeight());
+        tor.feed(100.0);
+        tor.feed(50.0);
+        tor.pee();
+        System.out.println("\nВес кота Тора " + tor.getWeight() + "\nКот Тор съел " + tor.massOfFood());
 
-        newCat(tom);//вызов метода, создающего новую кошку
+        getKitten();//вызов метода, создающего новую кошку
 
         //количество кошек
         System.out.println("\n-========-");
         System.out.println("Количество живых кошек: " + Cat.getCount());
-
-
 
 
     }
