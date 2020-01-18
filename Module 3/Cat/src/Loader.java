@@ -16,6 +16,8 @@ public class Loader {
 
         Cat tor = new Cat(2000);
 
+        Cat tim = new Cat(100);
+
         //про кота Пита
         pit.meow();
         double w = pit.getWeight();
@@ -24,16 +26,24 @@ public class Loader {
             pit.meow();
         }
         System.out.println("\nВес кота Пита " + pit.getWeight() + "\nЧто с котом Питом: " + pit.getStatus());
+        pit.meow();
 
         //про кота Филиппа
         System.out.println("\n\nВес кота Филиппа " + filipp.getWeight());
-        //filipp.meow();
         while (filipp.getWeight() <= 9001) {
             filipp.feed(50.0);
             System.out.println(filipp.getWeight());
         }
         System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
-                + "\nФилипп съел " + filipp.massOfFood());
+                + "\nФилипп съел " + filipp.getMassFeed());
+        filipp.pee();
+        filipp.pee();
+        filipp.pee();
+
+        System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
+                + "\nФилипп съел " + filipp.getMassFeed());
+
+
 
         //про кота Тома
         System.out.println("\n\nВес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
@@ -45,7 +55,7 @@ public class Loader {
         manya.feed(100.0);
         manya.meow();
         System.out.println("Вес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
-        System.out.println(manya.massOfFood());
+        System.out.println(manya.getMassFeed());
 
         //про кошку Фиби
         System.out.println("\n\nВес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
@@ -59,10 +69,18 @@ public class Loader {
         System.out.println("\nВес кота Тора " + tor.getWeight());
         tor.feed(100.0);
         tor.feed(50.0);
+        tor.drink(25.0);
         tor.pee();
-        System.out.println("\nВес кота Тора " + tor.getWeight() + "\nКот Тор съел " + tor.massOfFood());
+        System.out.println("\nВес кота Тора " + tor.getWeight() + "\nКот Тор съел " + tor.getMassFeed() + "\nКот Тор выпил " + tor.getMassDrink());
 
         getKitten();//вызов метода, создающего новую кошку
+
+        //про кота Тима
+       System.out.println("\nЧто с кошкой Тимом: " + tim.getStatus());
+       tim.feed(35.0);
+       tim.drink(45.0);
+        System.out.println("\nВес кота Тима " + tim.getWeight() + "\nКот Тим съел " + tim.getMassFeed() + "\nКот Тим выпил " + tim.getMassDrink());
+
 
         //количество кошек
         System.out.println("\n-========-");
