@@ -8,12 +8,11 @@ public class Loader {
     }
 
     public static void main(String[] args) {
-        Cat filipp = new Cat();
         Cat pit = new Cat();
+        Cat filipp = new Cat();
         Cat tom = new Cat();
         Cat manya = new Cat();
         Cat fibi = new Cat();
-
         Cat tor = new Cat(2000);
 
         Cat tim = new Cat(100);
@@ -34,7 +33,7 @@ public class Loader {
             filipp.feed(50.0);
             System.out.println(filipp.getWeight());
         }
-        System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
+        System.out.println("\nВес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
                 + "\nФилипп съел " + filipp.getMassFeed());
         filipp.pee();
         filipp.pee();
@@ -42,8 +41,6 @@ public class Loader {
 
         System.out.println("Вес кота Филиппа " + filipp.getWeight() + "\nЧто с котом Филиппом: " + filipp.getStatus()
                 + "\nФилипп съел " + filipp.getMassFeed());
-
-
 
         //про кота Тома
         System.out.println("\n\nВес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
@@ -76,11 +73,14 @@ public class Loader {
         getKitten();//вызов метода, создающего новую кошку
 
         //про кота Тима
-       System.out.println("\nЧто с кошкой Тимом: " + tim.getStatus());
-       tim.feed(35.0);
-       tim.drink(45.0);
-        System.out.println("\nВес кота Тима " + tim.getWeight() + "\nКот Тим съел " + tim.getMassFeed() + "\nКот Тим выпил " + tim.getMassDrink());
+        System.out.println("\nЧто с кошкой Тимом: " + tim.getStatus());
+        tim.feed(35.0);
+        tim.drink(45.0);
+        tim.meow();
+        tim.meow();
+        System.out.println("\nЧто с кошкой Тимом: " + tim.getStatus());
 
+        System.out.println("\nВес кота Тима " + tim.getWeight() + "\nКот Тим съел " + tim.getMassFeed() + "\nКот Тим выпил " + tim.getMassDrink());
 
         //количество кошек
         System.out.println("\n-========-");

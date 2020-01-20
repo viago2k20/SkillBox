@@ -69,8 +69,12 @@ public class Cat {
         if (catIsAlive) {
             weight = weight - 1;
             System.out.println("Meow");
+            if (weight < minWeight) {
+                catIsAlive = false;
+                count--;
+            }
         } else {
-            System.out.println("Кошка умерла.");
+            System.out.println("Не мяукает, кошка умерла.");
         }
     }
 
@@ -79,10 +83,15 @@ public class Cat {
         if (catIsAlive) {
             weight = weight + amount;
             massFeed = massFeed + amount;
+            if (weight > maxWeight) {
+                catIsAlive = false;
+                count--;
+            }
         } else {
             System.out.println("Нельзя покормить кошку, она умерла.");
         }
     }
+
     //метод: поим кошку
     public void drink(Double amount) {
         if (catIsAlive) {
@@ -92,27 +101,22 @@ public class Cat {
             System.out.println("Нельзя напоить кошку, она умерла.");
         }
     }
+
     //метод: возвращает вес кошки
     public Double getWeight() {
         return weight;
     }
+
     //метод: чем занимается кошки или в каком она состоянии
     public String getStatus() {
-        if (catIsAlive) {
-            if (weight < minWeight) {
-                count--;
-                catIsAlive = false;
-                return "Dead";
-            } else if (weight > maxWeight) {
-                count--;
-                catIsAlive = false;
-                return "Exploded";
-            } else if (weight > originWeight) {
-                return "Sleeping";
-            } else {
-                return "Playing";
-            }
+        if (weight < minWeight) {
+            return "Dead";
+        } else if (weight > maxWeight) {
+            return "Exploded";
+        } else if (weight > originWeight) {
+            return "Sleeping";
+        } else {
+            return "Playing";
         }
-        return "Dead";
     }
 }
