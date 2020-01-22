@@ -28,7 +28,13 @@ public class Cat {
     public Cat(double weight) {
         this();
         this.weight = weight;
-        if (weight < minWeight) {
+        checkOutBoundary();
+    }
+
+    //метод уменьшает переменную подсчета кошек если вес вышел за допустимые пределы
+    public void checkOutBoundary() {
+        if (weight < minWeight || weight > maxWeight)
+        {
             catIsAlive = false;
             count--;
         }
@@ -61,18 +67,14 @@ public class Cat {
         } else {
             System.out.println("Кошка умерла.");
         }
-
     }
 
     //метод: кошка мяукает
     public void meow() {
         if (catIsAlive) {
-            weight = weight - 1;
             System.out.println("Meow");
-            if (weight < minWeight) {
-                catIsAlive = false;
-                count--;
-            }
+            weight = weight - 1;
+            checkOutBoundary();
         } else {
             System.out.println("Не мяукает, кошка умерла.");
         }
@@ -83,10 +85,7 @@ public class Cat {
         if (catIsAlive) {
             weight = weight + amount;
             massFeed = massFeed + amount;
-            if (weight > maxWeight) {
-                catIsAlive = false;
-                count--;
-            }
+            checkOutBoundary();
         } else {
             System.out.println("Нельзя покормить кошку, она умерла.");
         }
@@ -97,6 +96,7 @@ public class Cat {
         if (catIsAlive) {
             weight = weight + amount;
             massDrink = massDrink + amount;
+            checkOutBoundary();
         } else {
             System.out.println("Нельзя напоить кошку, она умерла.");
         }
