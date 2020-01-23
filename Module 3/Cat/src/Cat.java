@@ -12,6 +12,8 @@ public class Cat {
     private double originWeight;
     private double weight;
 
+    private String colorCat;
+
     //конструктор по умолчанию
     public Cat() {
         weight = 1500.0 + 3000.0 * Math.random();
@@ -29,6 +31,15 @@ public class Cat {
         this();
         this.weight = weight;
         checkOutBoundary();
+    }
+
+    public void setColorCat(String colorCat){
+        this.colorCat = colorCat;
+    }
+
+    public String getColorCat()
+    {
+        return colorCat;
     }
 
     //метод уменьшает переменную подсчета кошек если вес вышел за допустимые пределы

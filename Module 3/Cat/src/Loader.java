@@ -48,14 +48,17 @@ public class Loader {
         System.out.println("Вес кота Тома " + tom.getWeight() + "\nЧто с котом Томом: " + tom.getStatus());
 
         //про кошку Маню
-        System.out.println("\n\nВес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
+        manya.setColorCat("Рыжий");
+        System.out.println("\n\nВес кошки Мани " + manya.getWeight() + "\nОкрас кошки Мани " + manya.getColorCat() + "\nЧто с кошкой Маней: " + manya.getStatus());
         manya.feed(100.0);
         manya.meow();
         System.out.println("Вес кошки Мани " + manya.getWeight() + "\nЧто с кошкой Маней: " + manya.getStatus());
         System.out.println(manya.getMassFeed());
 
         //про кошку Фиби
-        System.out.println("\n\nВес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
+        fibi.setColorCat("Белый");
+
+        System.out.println("\n\nВес кошки Фиби " + fibi.getWeight() + "\nОкрас кошки Фиби " + fibi.getColorCat() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
         fibi.meow();
         fibi.meow();
         fibi.pee();
