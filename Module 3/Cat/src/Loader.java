@@ -2,9 +2,9 @@ public class Loader {
 
     //метод в котором создается новая кошка и отображается ее вес
     private static Cat getKitten() {
-        Cat nameCat = new Cat(1100);
-        System.out.println("\nПоявился котенок! Его вес = " + nameCat.getWeight());
-        return nameCat;
+        Cat newCat = new Cat(1100);
+        System.out.println("\nПоявился котенок! Его вес = " + newCat.getWeight());
+        return newCat;
     }
 
     public static void main(String[] args) {
@@ -16,6 +16,9 @@ public class Loader {
         Cat tor = new Cat(2000);
 
         Cat tim = new Cat(100);
+
+        Cat gray = new Cat(fibi);
+
 
         //про кота Пита
         pit.meow();
@@ -63,6 +66,12 @@ public class Loader {
         fibi.meow();
         fibi.pee();
         System.out.println("Вес кошки Фиби " + fibi.getWeight() + "\nЧто с кошкой Фиби: " + fibi.getStatus());
+
+
+        gray.setColorCat("Серый");
+
+        System.out.println("\n\nВес кота Серого " + gray.getWeight() + "\nОкрас кота Серого " + gray.getColorCat() + "\nЧто с котом Серым: " + gray.getStatus());
+
 
         //про кота Тора
         tor.setCatsColor(CatsColor.BLACK);

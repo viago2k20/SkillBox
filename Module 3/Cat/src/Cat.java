@@ -33,19 +33,26 @@ public class Cat {
         checkOutBoundary();
     }
 
-    public void setColorCat(String colorCat){
+    //метод создания глубокой копии кошки
+    public Cat(Cat novaCat){
+        this();
+        this.catIsAlive = novaCat.catIsAlive;
+        this.weight = novaCat.getWeight();
+        this.originWeight = novaCat.originWeight;
+        this.colorCat = novaCat.getColorCat();
+    }
+
+    public void setColorCat(String colorCat) {
         this.colorCat = colorCat;
     }
 
-    public String getColorCat()
-    {
+    public String getColorCat() {
         return colorCat;
     }
 
     //метод уменьшает переменную подсчета кошек если вес вышел за допустимые пределы
     public void checkOutBoundary() {
-        if (weight < minWeight || weight > maxWeight)
-        {
+        if (weight < minWeight || weight > maxWeight) {
             catIsAlive = false;
             count--;
         }
