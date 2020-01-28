@@ -17,7 +17,7 @@ public class Loader {
 
         Cat tim = new Cat(100);
 
-        Cat gray = new Cat(fibi);
+        Cat gray = new Cat(tim);
 
 
         //про кота Пита

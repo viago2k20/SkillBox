@@ -40,6 +40,7 @@ public class Cat {
         this.weight = novaCat.getWeight();
         this.originWeight = novaCat.originWeight;
         this.colorCat = novaCat.getColorCat();
+        checkOutBoundary();
     }
 
     public void setColorCat(String colorCat) {
