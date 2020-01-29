@@ -4,7 +4,7 @@ import com.skillbox.airport.Flight;
 import com.skillbox.airport.Terminal;
 
 import java.util.*;
-import java.util.concurrent.SynchronousQueue;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -12,27 +12,8 @@ public class Main {
 
         System.out.println("\nВсе самолеты в аэропорту: " + airport.getAllAircrafts().toString());
         System.out.println(airport.getTerminals());
-        String str = airport.getAllAircrafts().toString();
 
-        int total = 0;
-        for (int j=0; j<str.length();j++){
-            if (str.charAt(j) == ','){
-                total ++;
-            }
-        }
-        System.out.println("Количество самолетов: " + (total+1));
-
-        int count = 0;
-
-        String pattern = ",\\s";
-        String[] myArr = str.split(pattern);
-        for (String i : myArr) {
-            count++;
-        }
-        System.out.println("Количесвто самолетов: " + count);
-
-        Object[] arr = airport.getAllAircrafts().toArray();
-        System.out.println("Количество самолетов: " + arr.length);
+        System.out.println("\nКоличество самолетов: " + airport.getAllAircrafts().size());
 
 
         //создаем новый терминал
@@ -40,6 +21,7 @@ public class Main {
 
         //создаем новый самолет
         Aircraft tu = new Aircraft("TU-144");
+
 
         //устанавливаем время
         Calendar calendar = new GregorianCalendar(2020, 01, 24);
