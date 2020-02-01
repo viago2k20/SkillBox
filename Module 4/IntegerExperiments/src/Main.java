@@ -28,7 +28,7 @@ public class Main {
         char[] chars = number.toString().toCharArray();
 
         for (char i : chars) {
-            total += Integer.parseInt(Character.toString(i), 10);
+            total += Integer.parseInt(Character.toString(i));
         }
 
         return total;
