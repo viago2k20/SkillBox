@@ -3,7 +3,7 @@ public class Main {
         Container container = new Container();
         container.count += 7843;
 
-        System.out.println("Сумма цифр в числе " + container.count + " равна " + sumDigits(container.count));
+        System.out.println("\nСумма цифр в числе " + container.count + " равна " + sumDigits(container.count));
 
     }// end of main
 
@@ -11,8 +11,6 @@ public class Main {
         //TODO: write code here
         int result = 0;
         String str = Integer.toString(number);
-
-        String nStr = (str.charAt(0) + "");//преобразуем символ в строку добавлением пустой строки ""
 
         for (int i = 0; i < str.length(); i++) {
             result += Integer.parseInt(str.charAt(i) + "");
