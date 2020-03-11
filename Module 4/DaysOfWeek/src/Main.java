@@ -4,12 +4,17 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
+        int myYear = 1986;
+        int myMonth = 9;
+        int myDay = 20;
+
         SimpleDateFormat dayOfWeek = new SimpleDateFormat("dd.MM.YYYY - EEEE ", new Locale("ru"));
         SimpleDateFormat year = new SimpleDateFormat("YYYY", new Locale("ru"));
 
-        Calendar currentCalendar = Calendar.getInstance();
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(1986, 8, 20);
+        Calendar currentCalendar = Calendar.getInstance();//календарь с текущей датой
+        Calendar calendar = Calendar.getInstance();//календарь для установления даты
+
+        calendar.set(myYear, myMonth-1, myDay);
 
         int till = Integer.parseInt(year.format(currentCalendar.getTime())) - Integer.parseInt(year.format(calendar.getTime()));
 
