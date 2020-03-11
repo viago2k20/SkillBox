@@ -6,23 +6,26 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String[] str = scan.nextLine().split(" ");
 
-        String pattern = "([А-Я]{1}[а-я]*)|([А-Я]{1}[а-я]*-[А-Я]{1}[а-я]*)";
-        boolean status;
+        String pattern = "([А-Я][а-я]*)(-[А-Я][а-я]*)?";
+        boolean status = false;
 
         if (str.length != 3) {
             System.out.println("Неверный формат данных!");
         } else {
-            status = str[0].matches(pattern);
-            status = str[1].matches(pattern) && status;
-            status = str[2].matches(pattern) && status;
-            if (!status) {
-                System.out.println("Неверный формат данных!!");
+
+            for (String s : str) {
+                if (s.matches(pattern)) {
+                    status = true;
+                } else {
+                    System.out.println("Неверный формат данных!!");
+                    status = false;
+                    break;
+                }
             }
-            else {
+            if (status){
                 System.out.println("Фамилия: " + str[0]);
                 System.out.println("Имя: " + str[1]);
-                System.out.println("Отчество: " + str[2]);
-            }
+                System.out.println("Отчество: " + str[2]);}
         }
         scan.close();
     }
