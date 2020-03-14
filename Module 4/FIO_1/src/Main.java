@@ -7,12 +7,12 @@ public class Main {
         String[] str = scan.nextLine().split(" ");
 
         String pattern = "([А-Я][а-я]*)(-[А-Я][а-я]*)?";
-        boolean status = false;
+     //   boolean status = false;
 
         if (str.length != 3) {
             System.out.println("Неверный формат данных!");
         } else {
-
+            boolean status = false;
             for (String s : str) {
                 if (s.matches(pattern)) {
                     status = true;

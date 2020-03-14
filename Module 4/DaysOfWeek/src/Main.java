@@ -5,7 +5,7 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
         int myYear = 1986;
-        int myMonth = 9;
+        int myMonth = 9;//сентябрь
         int myDay = 20;
 
         SimpleDateFormat dayOfWeek = new SimpleDateFormat("dd.MM.YYYY - EEEE ", new Locale("ru"));
